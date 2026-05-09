@@ -59,18 +59,18 @@ The platform follows a distributed async processing model:
 
 ## 🛠 Tech Stack
 
-| Layer | Technology | Purpose |
-| --- | --- | --- |
-| Frontend | Next.js, TypeScript, Tailwind CSS, ShadCN UI | Dashboard, auth, task management UI |
-| Client State | Zustand, React Query, Axios | Auth persistence, API calls, query caching |
-| Backend API | Node.js, Express.js | Authentication, task CRUD, queue publishing |
-| Queue | Redis, BullMQ | Background job orchestration and retries |
-| Worker | Python | Async task execution |
-| Database | MongoDB Atlas | Users, tasks, logs, task status |
-| Containers | Docker, Docker Compose | Service packaging and local orchestration |
-| Orchestration | Kubernetes, k3s-compatible | Production workloads and scaling |
-| GitOps | Argo CD | Declarative deployment sync |
-| CI/CD | GitHub Actions | Build, test, image publish, deploy automation |
+| Layer         | Technology                                   | Purpose                                       |
+| ------------- | -------------------------------------------- | --------------------------------------------- |
+| Frontend      | Next.js, TypeScript, Tailwind CSS, ShadCN UI | Dashboard, auth, task management UI           |
+| Client State  | Zustand, React Query, Axios                  | Auth persistence, API calls, query caching    |
+| Backend API   | Node.js, Express.js                          | Authentication, task CRUD, queue publishing   |
+| Queue         | Redis, BullMQ                                | Background job orchestration and retries      |
+| Worker        | Python                                       | Async task execution                          |
+| Database      | MongoDB Atlas                                | Users, tasks, logs, task status               |
+| Containers    | Docker, Docker Compose                       | Service packaging and local orchestration     |
+| Orchestration | Kubernetes, k3s-compatible                   | Production workloads and scaling              |
+| GitOps        | Argo CD                                      | Declarative deployment sync                   |
+| CI/CD         | GitHub Actions                               | Build, test, image publish, deploy automation |
 
 ## 📁 Folder Structure
 
@@ -264,13 +264,13 @@ This repository is application-focused and does not currently include in-repo Ku
 
 Typical workloads:
 
-| Component | Kubernetes Resource |
-| --- | --- |
-| Frontend | Deployment + Service + Ingress |
-| Backend | Deployment + Service + Ingress/Internal Service |
-| Worker | Deployment |
-| Redis | Managed Redis or StatefulSet |
-| MongoDB Atlas | External managed database |
+| Component     | Kubernetes Resource                             |
+| ------------- | ----------------------------------------------- |
+| Frontend      | Deployment + Service + Ingress                  |
+| Backend       | Deployment + Service + Ingress/Internal Service |
+| Worker        | Deployment                                      |
+| Redis         | Managed Redis or StatefulSet                    |
+| MongoDB Atlas | External managed database                       |
 
 ### Recommended Kubernetes Objects
 
@@ -707,13 +707,13 @@ argocd app get ai-task-platform
 
 Recommended pipeline responsibilities:
 
-| Stage | Action |
-| --- | --- |
+| Stage    | Action                                                        |
+| -------- | ------------------------------------------------------------- |
 | Validate | Install dependencies, lint frontend, validate backend scripts |
-| Build | Build Next.js frontend and Docker images |
-| Package | Push versioned images to registry |
-| Release | Update infra repo or deployment manifests |
-| Deploy | Argo CD syncs target cluster |
+| Build    | Build Next.js frontend and Docker images                      |
+| Package  | Push versioned images to registry                             |
+| Release  | Update infra repo or deployment manifests                     |
+| Deploy   | Argo CD syncs target cluster                                  |
 
 Example triggers:
 
@@ -737,10 +737,10 @@ Authorization: Bearer <jwt-token>
 
 ### Authentication Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | `/auth/register` | Register a new user |
-| POST | `/auth/login` | Authenticate and receive JWT |
+| Method | Endpoint         | Description                  |
+| ------ | ---------------- | ---------------------------- |
+| POST   | `/auth/register` | Register a new user          |
+| POST   | `/auth/login`    | Authenticate and receive JWT |
 
 #### Register
 
@@ -773,13 +773,13 @@ Content-Type: application/json
 
 ### Task Endpoints
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | `/tasks` | Create a task |
-| GET | `/tasks` | List current user's tasks |
-| GET | `/tasks/:id` | Get task details |
-| PUT | `/tasks/:id` | Edit a completed task and requeue it |
-| DELETE | `/tasks/:id` | Delete a completed task |
+| Method | Endpoint     | Description                          |
+| ------ | ------------ | ------------------------------------ |
+| POST   | `/tasks`     | Create a task                        |
+| GET    | `/tasks`     | List current user's tasks            |
+| GET    | `/tasks/:id` | Get task details                     |
+| PUT    | `/tasks/:id` | Edit a completed task and requeue it |
+| DELETE | `/tasks/:id` | Delete a completed task              |
 
 #### Create Task
 
@@ -884,12 +884,12 @@ Key metrics to watch:
 
 Replace these placeholders with your actual environments:
 
-| Environment | URL |
-| --- | --- |
-| Frontend | `https://app.example.com` |
-| Backend API | `https://api.example.com` |
-| Argo CD | `https://argocd.example.com` |
-| Grafana | `https://grafana.example.com` |
+| Environment | URL                           |
+| ----------- | ----------------------------- |
+| Frontend    | `https://app.example.com`     |
+| Backend API | `https://api.example.com`     |
+| Argo CD     | `https://argocd.example.com`  |
+| Grafana     | `https://grafana.example.com` |
 
 ## 🏗️ Infrastructure Repository
 
@@ -919,8 +919,8 @@ to this repository and point Argo CD to those paths.
 
 **Ashish Jha**
 
-- GitHub: `https://github.com/your-username`
-- LinkedIn: `https://linkedin.com/in/your-profile`
+- GitHub: `https://github.com/Ashish-jha-85`
+- LinkedIn: `www.linkedin.com/in/ashish-kumar-jha-700713365`
 
 ## 📄 License
 
