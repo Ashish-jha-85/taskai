@@ -1,0 +1,41 @@
+name: TaskAI CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Backend
+      - name: Build Backend
+        run: docker build -t ashishjha1421/taskai-backend:latest ./backend
+
+      - name: Push Backend
+        run: docker push ashishjha1421/taskai-backend:latest
+
+      # Frontend
+      - name: Build Frontend
+        run: docker build -t ashishjha1421/taskai-frontend:latest ./frontend
+
+      - name: Push Frontend
+        run: docker push ashishjha1421/taskai-frontend:latest
+
+      # Worker
+      - name: Build Worker
+        run: docker build -t ashishjha1421/taskai-worker:latest ./worker
+
+      - name: Push Worker
+        run: docker push ashishjha1421/taskai-worker:latest
